@@ -1,0 +1,46 @@
+.cart-container {
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns */
+    grid-gap: 10px;
+    /* gap between grid items */
+    padding: 0px;
+
+}
+
+
+
+.grid-item {
+    /* background-color: #ddd; */
+    padding: 10px;
+    border-radius: 5px;
+    /* box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.3); */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+/* For 3 columns */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* For 2 columns */
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For 1 column */
+@media screen and (max-width: 320px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
