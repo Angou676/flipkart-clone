@@ -1,8 +1,8 @@
 import React from 'react'
 import './listOfProduct.css'
 import { useNavigate } from 'react-router-dom';
-
-import { useSelector, useDispatch } from 'react-redux';
+import StarIcon from '@mui/icons-material/Star';
+import { useSelector } from 'react-redux';
 
 const ListOfProduct = () => {
     const navigate = useNavigate()
@@ -19,32 +19,33 @@ const ListOfProduct = () => {
             <div className="grid-container">
                 {
                     globalState.listOfItems.map(val => {
-                        return <div className="grid-item"
-                        key={val.id}
+                        return <div className="grid-item cursor-pointer "
+                            key={val.id}
                             onClick={() => redirectingToProductDetail(val.id)}
                         >
-                            <div style={{ height: '160px', padding: '10px 20px', }}>
-                                <img src={val.image} style={{ height: '100%', width: '100%', }} />
+                            <div className='img-blck'>
+                                <img src={val.image} className='height-width-max' />
 
                             </div>
-                            <div style={{ height: '160px', border: '1px solid red' }}>
-                                <div>
-                                    Rate
-                                    {
-                                        val.rating.rate
-                                    }
-                                    Count
-                                    {
-                                        val.rating.count
-                                    }
-                                </div>
-                                <div>{val.title}</div>
+                            <div className='height90'>
+                                <div className='title-style'>{val.title}</div>
 
-                                <div>
-                                    Rs {
+                                <div className='margin-t display-flex-stylelist'>
+                                    <span className='rating-style color-white'>
+                                        {val.rating.rate}
+                                        <StarIcon className='font-size18' />
+                                    </span>
+                                    <span className='font-size14'>
+                                        ({
+                                            val.rating.count
+                                        })
+                                    </span>
+                                </div>
+                                <div className='margin-t font-size16'>
+                                    ₹
+                                    {
                                         val.price
                                     }
-
                                 </div>
                             </div>
                         </div>

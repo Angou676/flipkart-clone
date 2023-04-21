@@ -3,6 +3,7 @@ import apis from './Apis/Apis';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from './components/index'
+import './App.css'
 
 
 import { useSelector, useDispatch } from 'react-redux';

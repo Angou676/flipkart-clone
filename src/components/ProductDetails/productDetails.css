@@ -1,5 +1,30 @@
 .prod-detail-blk {
-    border: 1px solid red;
-    height: 600px;
-    width: 700px;
+    width: 90%;
+    margin: auto;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.prod-img-block{
+    height: 100%;
+    width: 40%;
+    padding: 20px;
+    height: 500px;
+}
+.prod-detail-subblk{
+    width: 55%;
+}
+.prod-title-style{
+    font-size: 20px;
+}
+
+.btn-blk{
+    height: 30px;
+    background-color: green;
+    width: 130px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

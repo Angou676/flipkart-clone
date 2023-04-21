@@ -1,13 +1,18 @@
 .cat-block {
-    margin-top: 50px;
-    height: 100px;
-    border: 1px solid red;
+    height: 30px;
+    background-color: #FFFFFF;
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    margin-top: -40px;
+    padding-top: 8px;
 }
 
 .category-list {
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
+    margin-left: 10px;
 }
 
 .category-list::-webkit-scrollbar {
@@ -21,12 +26,18 @@
     margin: 0;
     list-style: none;
     display: inline-block;
+    text-transform: capitalize;
+    font-weight: 600;
 }
 
 .category-list li {
     display: inline-block;
     margin-right: 20px;
 
+}
+
+.category-list li:hover {
+    color: blue;
 }
 
 .category-list li:last-child {

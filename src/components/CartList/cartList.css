@@ -1,0 +1,36 @@
+.cart-list-main-cont{
+    width: 92%;
+    margin: auto;
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-list-blk{
+    width: 50%;
+}
+
+.checkout-block{
+    width: 40%;
+}
+
+.incre-block{
+    border: 1px solid grey;
+    width: 110px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.checkout-btn{
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    color: #FFFFFF;
+}

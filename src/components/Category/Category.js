@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './category.css'
 import axios from 'axios';
 import apis from '../../Apis/Apis';
-
 import { useSelector, useDispatch } from 'react-redux';
-// import { actions } from '../../store/index';
 import { actions } from '../../ReduxStore/index';
 
 const Category = () => {
@@ -29,21 +27,21 @@ const Category = () => {
                 dispatch(actions.setListOfItems(res.data))
             })
             .catch(err => console.log(err))
-
     }
 
     return (
         <div className='cat-block'>
-            <div className="category-list">
-                <ul>
-                    <li style={{ border: '1px solid red' }}
+            <div className="category-list ">
+                <ul >
+                    <li className='cursor-pointer '
                         onClick={displayAllHandler}
                     >
                         All items
                     </li>
                     {
                         category?.map((val, idx) => {
-                            return <li style={{ border: '1px solid red' }}
+                            return <li
+                            className='cursor-pointer '
                                 key={idx}
                                 onClick={() => categorySelectionHandler(val)}
                             >

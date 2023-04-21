@@ -1,19 +1,46 @@
 .cart-container {
-    margin-top: 20px;
+    margin-top: 90px;
     padding: 0px;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 columns */
     grid-gap: 10px;
-    /* gap between grid items */
     padding: 0px;
-
 }
 
+.height90 {
+    height: 90px;
+}
 
+.img-blck {
+    height: 160px;
+    padding: 10px 20px;
+}
+
+.title-style {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.margin-t {
+    margin-top: 6px;
+}
+
+.rating-style {
+    padding: 2px 8px;
+    background-color: green;
+    display: flex;
+    width: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.display-flex-stylelist {
+    display: flex;
+    align-items: center;
+}
 
 .grid-item {
     /* background-color: #ddd; */

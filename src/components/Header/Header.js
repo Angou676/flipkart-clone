@@ -1,14 +1,15 @@
 import React from 'react'
 import './header.css'
 import { useSelector, useDispatch } from 'react-redux';
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
+import Badge from '@mui/material/Badge';
+
 
 
 const Header = () => {
   const navigate = useNavigate()
   const globalState = useSelector((state) => state)
-  // console.log("globalState.cartItem", globalState.cartItem)
 
   const redirectToCheckout = () => {
     navigate(`/cart-list`)
@@ -16,10 +17,25 @@ const Header = () => {
 
 
   return (
-    <div className='header'
-      onClick={redirectToCheckout}
+    <div className='header display-flex-style'
     >
-      Cart {globalState?.cartItem < 1 ? null : globalState?.cartItem?.length}
+      <div className='width-center-blk display-flex-style'>
+        <div className='cursor-pointer'
+        onClick={()=>navigate(`/home`)}
+        >
+          Flipkart Clone
+        </div>
+        <div className='display-flex-style cursor-pointer'
+          onClick={redirectToCheckout}
+          x
+        >
+          <Badge badgeContent={globalState?.cartItem < 1 ? null : globalState?.cartItem?.length} color="primary">
+            <ShoppingCartIcon />
+          </Badge>
+          &nbsp;
+          Cart 
+        </div>
+      </div>
     </div>
   )
 }

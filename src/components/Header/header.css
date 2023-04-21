@@ -1,8 +1,20 @@
 .header {
-    height: 40px;
+    height: 50px;
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: rgb(172, 212, 247);
+    background-color: rgb(69, 68, 71);
+    color: #FFFFFF;
+}
+
+.display-flex-style {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.width-center-blk {
+    width: 98%;
+    margin: auto;
 }

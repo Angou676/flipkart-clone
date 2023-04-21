@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import apis from '../../Apis/Apis'
 import { useSelector, useDispatch } from 'react-redux';
 import { actions } from '../../ReduxStore/index';
+import StarIcon from '@mui/icons-material/Star';
 
 const ProductDetails = () => {
     const { getId } = useParams();
@@ -23,29 +24,61 @@ const ProductDetails = () => {
         dispatch(actions.addToCart(selectedItem))
     }
 
+    console.log(selectedItem)
 
     return (
         <div className='prod-detail-blk'>
-            <img src={selectedItem?.image} style={{ height: '300px', width: '300px' }} />
-            <div>
-                {
-                    selectedItem?.title
-                }
+            <div className='prod-img-block'>
+                <img src={selectedItem?.image} className='height-width-max' />
+
             </div>
+            <div className='prod-detail-subblk'>
+                <div className='prod-title-style'>
+                    {
+                        selectedItem?.title
+                    }
+                </div>
 
-            {
-                globalState.cartItem.length === 0
-                    ?
-                    <button onClick={addToCartHandler}>Add to cart</button>
-                    :
-                    globalState?.cartItem.find(cartItem => cartItem.id === parseInt(getId))
-                        ?
-                        <div>Already in Cart</div>
-                        :
-                        <button onClick={addToCartHandler}>Add to cart</button>
+                <div className='margin-top-15 '>
+                    {
+                        selectedItem?.description
+                    }
+                </div>
 
-            }
+                <div className='margin-t display-flex-stylelist'>
+                    <span className='rating-style color-white'>
+                        {selectedItem?.rating.rate}
+                        <StarIcon className='font-size18' />
+                    </span>
+                    <span className='font-size14'>
+                        ({
+                            selectedItem?.rating.count
+                        })
+                    </span>
 
+                </div>
+
+                <div className='margin-t' style={{ textTransform: 'capitalize' }}>
+                    {selectedItem?.category}
+                </div>
+
+                <div className='margin-top-15 btn-blk '>
+
+                    {
+                        globalState.cartItem.length === 0
+                            ?
+                            <div onClick={addToCartHandler} className='cursor-pointer '>Add to cart</div>
+                            :
+                            globalState?.cartItem.find(cartItem => cartItem.id === parseInt(getId))
+                                ?
+                                <div>Already in Cart</div>
+                                :
+                                <div onClick={addToCartHandler} className='cursor-pointer '>Add to cart</div>
+
+                    }
+                </div>
+
+            </div>
         </div>
     )
 }
